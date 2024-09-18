@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: job
+metadata:
+  name: test
+spec: 
+  manualSelector: true
+  selector:
+    matchLabels:
+      bath.k8s.io/name: test
+  template:
+    metadata:
+      labels:
+        batch.k8s.io/name: test
+    spec:
+      restartpolicy: Never
+      containers:
+        - name: test
+          image: alpine:latest
+          command: ["echo", "kubedemy.io"]
