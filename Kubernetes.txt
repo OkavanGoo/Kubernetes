@@ -1,0 +1,37 @@
+https://devops-with-saeid.com/
+
+>> k3s.io
+curl -sfL https://get.k3s.io | sh -
+sudo k3s kubectl get node
+----------------
+wrokernode:
+pod: smallerst work unit
+
+kubectl completion bash
+kubectl completion bash > /etc/bash_completion.d/kubectl
+
+cat /etc/rancher/k3s/k3s.yaml
+
+kubectl api-resources
+kubectl explain ----
+kubectl explain pods
+-------------------
+kubectl apply -f pod.yml
+kubectl get po -o wide
+ kubectl get no -o wide
+ kubectl delete po test
+ 
+ kubectl delete po --all
+ watch -n0.1 kubectl get po -o wide
+ 
+ *kubernetes: desire state - selfiening - scaling
+ kubectl scale replicaset test --replicas 3
+ 
+ kubectl exec test -- df -h
+ kubectl exec test-6lx9x -- nginx -v
+ 
+ kubectl describe rs test
+ ----------------
+ *Deployment uses for version upgrade or downgrade
+ kubectl rollout undo deployment test
+ 
